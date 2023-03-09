@@ -1,0 +1,290 @@
+body {
+    background: linear-gradient(
+      315deg,
+      rgb(227, 38, 5) 3%,
+      rgb(244, 6, 220) 38%,
+      rgb(100, 11, 188) 68%,
+      rgb(12, 220, 50) 98%
+    );
+    
+    /* animation: gradient 15s ease infinite; */
+    animation: gradient 15s ease-in-out infinite;
+    background-size: 300% 300%;
+    background-attachment: fixed;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .main{
+    margin-top: 10%;
+    display: block;
+    text-align: center;
+   
+  }
+  .wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 13em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+  }
+
+  
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes wave {
+    2% {
+      transform: translateX(1);
+    }
+  
+    25% {
+      transform: translateX(-25%);
+    }
+  
+    50% {
+      transform: translateX(-50%);
+    }
+  
+    75% {
+      transform: translateX(-25%);
+    }
+  
+    100% {
+      transform: translateX(1);
+    }
+  }
+
+  .btn-cc {
+    width: 130px;
+    height: 40px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  .btn:after {
+    position: absolute;
+    border-radius: 5px;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+      7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+  }
+  .btn:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+
+
+  .container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    left: 30%;
+    top: 20%;
+  }
+
+  .drop{
+    width: 393px;
+    height: 422px;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.08), 25px 35px 20px rgba(0,0,0,0.05), 25px 30px 30px rgba(0,0,0,0.05), inset -20px -20px 25px rgba(255,255,255,0.9);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:51% 49% 44% 56% / 52% 30% 70% 48% ;
+  }
+  .drop:hover{
+      border-radius: 50%;
+  }
+
+  .drop::before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 50px;
+    left: 85px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.9;
+}
+.drop::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 90px;
+    left: 110px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.9;
+}
+.content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    gap: 15px;
+
+}
+.content h3{
+  position: relative;
+  color:beige;
+  font-size: 1.5em;
+  }
+  
+  .content form{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+     
+      justify-content: center;
+      align-items: center;
+  }
+  .content form .inputBox{
+      position: relative;
+      width: 255px;
+      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+      inset -2px -5px 10px rgba(255, 255, 255, 1),
+      15px 15px 10px rgba(0,0,0,0.05), 15px 10px 15px rgba(0,0,0,0.025);
+  
+  border-radius: 25px;
+  }
+  .content form .inputBox::before{
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 5px;
+      width: 65%;
+      border-radius: 5px;
+  }
+
+  .content form .inputBox input{
+    border: none;
+    outline: none;
+    color:beige;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+}
+.content form .inputBox input[type="submit"]{
+    color: #eff0f4;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.content form .inputBox:last-child{
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -5px 10px rgba(255, 255, 255, 1),
+    15px 15px 10px rgba(0,0,0,0.05), 15px 10px 15px rgba(0,0,0,0.025);
+    width: 120px;
+    transition: 0.5s;
+    background-color: rgb(34, 145, 218);
+}
+.content form .inputBox:last-child:hover{
+    width: 150px;
+}
+
+.btns{
+  position: absolute;
+  right: -219px;
+  bottom: 0;
+  width: 155px;
+  height: 119px;
+  background: rgb(227, 84, 208);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #3c3c3e;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  transition: 0.25s;
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 10px 10px 10px rgba(190, 1, 254, 0.05) , 15px 25px 10px rgba(190, 1, 254, 0.1), 15px 20px 20px rgba(190, 1 ,254 , 0.1), inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+  border-radius:34% 66% 65% 35% / 57% 58% 42% 43%  ;
+}
+.btns:hover{
+  border-radius: 50%;
+}
+.btns::before{
+  content: '';
+  position: absolute;
+  width: 20px;
+  top: 15px;
+  left: 30px;
+  height: 20px;
+  border-radius: 50%;
+  background:#fff;
+  opacity: 0.45;
+}
+
+.btns.signup{
+  width: 95px;
+height: 84px;
+bottom: 200px;
+right: -135px;
+border-radius: 55% 45% 36% 64% / 38% 67% 33% 62%;
+background: rgb(244, 188, 20);
+box-shadow: inset 10px 10px 10px rgba(177, 147, 48, 0.58) , 15px 25px 10px rgba(239, 163, 18, 0.31), 15px 20px 20px rgba(183, 164, 109, 0.39), inset -10px -10px 15px rgba(255, 255, 255, 0.1);
+}
+.btns.signup:hover{
+  border-radius: 50%;
+}
+.btns.signup::before{
+  width: 15px;
+  height: 15px;
+  left: 20px;
+}
+
